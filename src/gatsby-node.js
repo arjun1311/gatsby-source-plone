@@ -233,7 +233,7 @@ exports.sourceNodes = async (
           createNode(node);
         }
       } catch (e) {
-        logger.error(`Skipping node – ${item._id.replace(baseUrl, '')} (${e})`)
+        logger.error(`Skipping node – ${item._id.replace(baseUrl, '')} (${e})`);
       }
     }
   } else {
@@ -299,7 +299,8 @@ exports.sourceNodes = async (
           createNode(node);
         }
         // For updated nodes, breadcrumbs of all children must be updated
-        if (item._id !== baseUrl) {  // except for update baseUrl
+        if (item._id !== baseUrl) {
+          // except for update baseUrl
           dirtyBreadcrumbs =
             dirtyBreadcrumbs === null || !item._id.startsWith(dirtyBreadcrumbs)
               ? item._id
